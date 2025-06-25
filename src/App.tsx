@@ -7,7 +7,7 @@ const App = () => {
       <Routes>
         {/* Define your routes here */}
         <Route
-          path={SCREEN_PATH.HOME.pathname}
+          path={SCREEN_PATH.Dashboard.pathname}
           element={<div>Dashboard</div>}
         />
         <Route path="/about" element={<div>About Page</div>} />

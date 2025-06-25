@@ -79,4 +79,8 @@ export const SCREEN_PATH = {
     pathname: "/contact-support",
     key: "20",
   },
+  contact_supportxx: {
+    pathname: "/contact-support",
+    key: "20",
+  },
 };

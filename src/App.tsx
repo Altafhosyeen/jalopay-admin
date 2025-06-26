@@ -9,7 +9,7 @@ const App = () => {
         {/* Define your routes here */}
         <Route
           path={SCREEN_PATH.Dashboard.pathname}
-          element={<div>Dashboard</div>}
+          element={<div className="h-screen  text-green-700">Dashboard</div>}
         />
         <Route
           path={SCREEN_PATH.Seller_Management.pathname}

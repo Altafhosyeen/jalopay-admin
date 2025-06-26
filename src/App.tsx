@@ -17,12 +17,30 @@ import Adminsetting from "./pages/AdminSetting";
 import ChatPartner from "./pages/ChatPartner";
 import ContactSupport from "./pages/ContactSupport";
 import Dashboard from "./pages/Daashoard";
+import ActiveBooking from "./pages/ActiveBooking";
+import ActiveSeller from "./pages/ActiveSeller";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<BaseLayout />}>
         <Route path="dashboard" element={<Dashboard/>} />
+        <Route
+          path="dashboard/Active-Booking"
+          element={<ActiveBooking />}
+        />
+        <Route
+          path="dashboard/Active-Seller"
+          element={<ActiveSeller />}
+        />
+        <Route
+          path="dashboard/Order"
+          element={<Order />}
+        />
+        <Route
+          path="dashboard/Revenue"
+          element={<Revenue />}
+        />
 
         {/* All these routes render inside BaseLayout, not inside SellerManagment */}
         <Route path="seller-management" element={<SellerManagment />} />

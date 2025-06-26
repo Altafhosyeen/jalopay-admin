@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Divider } from "antd";
+import { SCREEN_PATH } from "../constants";
+import { Link } from "react-router-dom";
 import {
   AreaChart,
   Area,
@@ -9,7 +11,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-
 
 export default function Dashboard() {
   const data = [
@@ -30,66 +31,73 @@ export default function Dashboard() {
         <Container>
           <Row className="gy-3">
             <Col className="col-lg-3 col-md-3 col-sm-12 col-12">
-              <div
-                className="card rounded-4"
-                style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
-              >
-                <div className="card-body">
-                  <i className="fa fa-solid fa-user"></i>
-                  <div>
-                    <h6>Active Bookings</h6>
-                    <span>784</span>
-                    <div className="d-flex">
-                      <p>
-                        <span className="text-success fw-bold">6.02</span> From
-                        Jan
-                      </p>
+              <Link to="/Dashboard/Active-Booking" className="text-decoration-none">
+                <div
+                  className="card rounded-4"
+                  style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
+                >
+                  <div className="card-body">
+                    <i className="fa fa-solid fa-user"></i>
+                    <div>
+                      <h6>Active Bookings</h6>
+                      <span>784</span>
+                      <div className="d-flex">
+                        <p>
+                          <span className="text-success fw-bold">6.02</span>{" "}
+                          From Jan
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </Col>
             <Col className="col-lg-3 col-md-3 col-sm-12 col-12">
-              <div
-                className="card rounded-4"
-                style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
-              >
-                <div className="card-body">
-                  <i className="fa fa-solid fa-car"></i>
-                  <div>
-                    <h6>Active Seller</h6>
-                    <span>120</span>
-                    <div className="d-flex">
-                      <p>
-                        <span className="text-danger fw-bold">0.32</span> From
-                        Jan
-                      </p>
+              <Link to="/Dashboard/Active-Seller" className="text-decoration-none">
+                <div
+                  className="card rounded-4"
+                  style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
+                >
+                  <div className="card-body">
+                    <i className="fa fa-solid fa-car"></i>
+                    <div>
+                      <h6>Active Seller</h6>
+                      <span>120</span>
+                      <div className="d-flex">
+                        <p>
+                          <span className="text-danger fw-bold">0.32</span> From
+                          Jan
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </Col>
             <Col className="col-lg-3 col-md-3 col-sm-12 col-12">
-              <div
-                className="card rounded-4"
-                style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
-              >
-                <div className="card-body">
-                  <i className="fa fa-solid fa-cancel"></i>
-                  <div>
-                    <h6>Total Order</h6>
-                    <span>2341</span>
-                    <div className="d-flex">
-                      <p>
-                        <span className="text-danger fw-bold">0.32</span> From
-                        Jan
-                      </p>
+              <Link to="/Dashboard/Order" className="text-decoration-none">
+                <div
+                    className="card rounded-4"
+                    style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
+                  >
+                    <div className="card-body">
+                      <i className="fa fa-solid fa-cancel"></i>
+                      <div>
+                        <h6>Total Order</h6>
+                        <span>2341</span>
+                        <div className="d-flex">
+                          <p>
+                            <span className="text-danger fw-bold">0.32</span> From
+                            Jan
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+              </Link>
             </Col>
             <Col className="col-lg-3 col-md-3 col-sm-12 col-12">
+             <Link to="/Dashboard/Revenue" className="text-decoration-none">
               <div
                 className="card rounded-4"
                 style={{ border: "2px solid #A25EDF", color: "#A25EDF" }}
@@ -108,20 +116,24 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
+             </Link>
             </Col>
           </Row>
           <Row className="gy-3 mt-3">
             <Col className="col-lg-12 col-md-12 col-sm-12 col-12">
-              <div className="card border-0 h-100" style={{ background: "#F9F5FF" }}>
+              <div
+                className="card border-0 h-100"
+                style={{ background: "#F9F5FF" }}
+              >
                 <div className="p-3">
                   <div className="flex justify-between items-center mb-3">
                     <h2 className="text-purple-600 font-semibold text-sm">
                       Active jalopay.Pro App USers
                     </h2>
                     <select name="" id="" className="bg-transparent">
-                       <option value="">8 jan - 2 dec</option>
-                       <option value="">8 jan - 2 dec</option>
-                       <option value="">8 jan - 2 dec</option>
+                      <option value="">8 jan - 2 dec</option>
+                      <option value="">8 jan - 2 dec</option>
+                      <option value="">8 jan - 2 dec</option>
                     </select>
                   </div>
                   <ResponsiveContainer width="100%" height={200}>
@@ -234,38 +246,42 @@ export default function Dashboard() {
           </Row>
           <Row className="gy-3 mt-3">
             <Col className="col-lg-6 col-md-6 col-sm-12 col-12">
-              <div className="card p-2 border-0" style={{background:"#F9F5FF",color:"#A25EDF"}}>
-                 <div className="card-body">
-                    <h2 className="fw-bold">Top Products</h2>
-                    <div className="d-flex mt-5">
-                       <div>
-                          <h5 className="fw-bold">Devine Dine</h5>
-                          <span>Devine@gmail.com</span>
-                       </div>
-                       <div className="ms-auto">
-                         <span>$3067</span>
-                       </div>
+              <div
+                className="card p-2 border-0"
+                style={{ background: "#F9F5FF", color: "#A25EDF" }}
+              >
+                <div className="card-body">
+                  <h2 className="fw-bold">Top Products</h2>
+                  <div className="d-flex mt-5">
+                    <div>
+                      <h5 className="fw-bold">Devine Dine</h5>
+                      <span>Devine@gmail.com</span>
                     </div>
-                    <hr />
-                   
-                 </div>
+                    <div className="ms-auto">
+                      <span>$3067</span>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
               </div>
             </Col>
-             <Col className="col-lg-6 col-md-6 col-sm-12 col-12">
-              <div className="card p-2 border-0 h-100" style={{background:"#F9F5FF",color:"#A25EDF"}}>
-                 <div className="card-body">
-                    <h2 className="fw-bold">Top Sellers</h2>
-                    <div className="d-flex mt-5">
-                       <div>
-                          <h5 className="fw-bold">Restaurant</h5>
-                       </div>
-                       <div className="ms-auto">
-                         <span>$53423</span>
-                       </div>
+            <Col className="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div
+                className="card p-2 border-0 h-100"
+                style={{ background: "#F9F5FF", color: "#A25EDF" }}
+              >
+                <div className="card-body">
+                  <h2 className="fw-bold">Top Sellers</h2>
+                  <div className="d-flex mt-5">
+                    <div>
+                      <h5 className="fw-bold">Restaurant</h5>
                     </div>
-                    <hr />
-                   
-                 </div>
+                    <div className="ms-auto">
+                      <span>$53423</span>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
               </div>
             </Col>
           </Row>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table, Button, Tag, Modal, Form, Input } from "antd";
-import { FilterOutlined, EyeOutlined } from "@ant-design/icons";
+import { FilterOutlined, ArrowLeftOutlined, EyeOutlined } from "@ant-design/icons";
 import { SCREEN_PATH } from "../constants";
 import { Link } from "react-router-dom";
 
@@ -17,10 +17,10 @@ const data = Array.from({ length: 13 }).map((_, index) => ({
   Action: "",
 }));
 
-export default function SellerManagment() {
+export default function TotalSeller() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form] = Form.useForm();
-
+console.log("ffffffffffffffff");
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -126,7 +126,8 @@ export default function SellerManagment() {
         <div className="row gy-3 justify-content-center mt-4">
           {/* Total Order */}
           <div className="col-lg-3 col-md-3 col-sm-6 col-6">
-           <Link to={`${SCREEN_PATH.Seller_Management.pathname}/total-seller`} className="text-decoration-none">
+<Link to={`${SCREEN_PATH.Seller_Management.pathname}/total-seller`} className="text-decoration-none">
+
 
               <div
                 className="text-center px-2 py-2 rounded-4"

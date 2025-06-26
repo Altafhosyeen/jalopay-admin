@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import { ADMIN_ROUTES } from "../route";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
 type Props = {
@@ -53,6 +53,7 @@ const BaseLayout: React.FC<Props> = ({ children }: Props) => {
           }}
         >
           {children}
+          <Outlet/>
         </Content>
       </Layout>
     </Layout>

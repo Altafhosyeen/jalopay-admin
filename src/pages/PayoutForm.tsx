@@ -17,7 +17,7 @@ const { Title } = Typography;
 
 const PayoutForm = () => {
   return (
-    <div className="container mx-auto px-4 mt-5">
+    <div className="container mx-auto px-4">
       <div className="row justify-content-center py-4">
         {/* Payment Method Form */}
         <div className="col-lg-12 mt-4">

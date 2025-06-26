@@ -84,7 +84,7 @@ export default function RidePartner() {
   ];
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-md text-purple-700 py-3">
+    <div className="p-6 bg-white shadow-md rounded-md text-purple-700">
       {/* Header */}
       <div className="d-flex mb-4 px-3 flex flex-col sm:flex-row flex-wrap">
         <div className="d-flex items-center gap-2">

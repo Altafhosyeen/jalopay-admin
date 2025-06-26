@@ -72,8 +72,8 @@ const SellerForm = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 mt-5">
-      <div className="row justify-content-center py-4">
+    <div className="container mx-auto px-4">
+      <div className="row justify-content-center">
         <div className="d-flex gap-2 justify-content-end">
           <button className="btn border rounded-pill px-4" onClick={showSectionModal}>
             + Add Section

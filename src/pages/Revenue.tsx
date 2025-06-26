@@ -86,7 +86,7 @@ export default function Revenue() {
   ];
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-md text-purple-700 py-3">
+    <div className="p-6 bg-white shadow-md rounded-md text-purple-700">
       {/* Header */}
       <div className="d-flex mb-4 px-3 flex flex-col sm:flex-row flex-wrap">
         <div className="d-flex items-center gap-2">
@@ -146,7 +146,12 @@ export default function Revenue() {
 
       {/* Table */}
       <div className="overflow-x-auto mt-3">
-        <Table columns={columns} dataSource={data} pagination={{ pageSize: 5 }} className="custom-table-header mt-4 px-3" />
+        <Table columns={columns} dataSource={data} pagination={{ pageSize: 5 }}  className="custom-table-header mt-2
+            [&_.ant-table-thead>tr>th]:!bg-[#A25dEF]
+            [&_.ant-table-thead>tr>th]:!text-white
+            [&_.ant-pagination-item-active]:!bg-purple-100
+            px-3
+          " />
 
         {/* Modal */}
         <Modal title="Total Revenue" open={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Submit">

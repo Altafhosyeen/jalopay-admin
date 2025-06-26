@@ -85,7 +85,7 @@ export default function Category() {
   ];
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-md text-purple-700 py-3">
+    <div className="p-6 bg-white shadow-md rounded-md text-purple-700">
       {/* Header */}
       <div className="d-flex mb-4 px-3 flex flex-col sm:flex-row flex-wrap">
         <div className="d-flex items-center gap-2">
@@ -129,7 +129,7 @@ export default function Category() {
 
       {/* Badge */}
       <div className="container">
-        <div className="row gy-3 justify-content-center mt-4">
+        <div className="row gy-3 gap-5 justify-content-center mt-4">
           {/* Total Order */}
           <div className="col-lg-2 col-md-3 col-sm-6 col-6">
             <a href="" className="text-decoration-none">

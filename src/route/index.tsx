@@ -62,4 +62,33 @@ export const ADMIN_ROUTES: NAV_ROUTE[] = [
       },
     ],
   },
+  {
+    pathname: SCREEN_PATH.New_Seller_Request.pathname,
+    label: getLink({
+      path: SCREEN_PATH.New_Seller_Request.pathname,
+      label: "New Seller Request",
+    }),
+    key: SCREEN_PATH.New_Seller_Request.key,
+    icon: <Home className={MAIN_ICON_SIZE} />,
+    children: [
+      {
+        pathname: SCREEN_PATH.order.pathname,
+        label: getLink({
+          path: SCREEN_PATH.order.pathname,
+          label: "Order",
+        }),
+        key: SCREEN_PATH.order.key,
+        icon: <Home className={MAIN_ICON_SIZE} />,
+      },
+      {
+        pathname: SCREEN_PATH.revenue.pathname,
+        label: getLink({
+          path: SCREEN_PATH.revenue.pathname,
+          label: "Revenue",
+        }),
+        key: SCREEN_PATH.revenue.key,
+        icon: <Home className={MAIN_ICON_SIZE} />,
+      },
+    ]
+  },
 ];

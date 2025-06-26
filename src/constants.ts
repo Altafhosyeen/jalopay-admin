@@ -1,3 +1,5 @@
+import type Order from "./pages/Order";
+
 export const SCREEN_PATH = {
   Dashboard: {
     pathname: "/dashboard",
@@ -8,19 +10,19 @@ export const SCREEN_PATH = {
     key: "2",
   },
   Ride_Partner: {
-    pathname: "/ride-partner",
+    pathname: "ride-partner",
     key: "3",
   },
   Category: {
-    pathname: "/category",
+    pathname: "category",
     key: "4",
   },
   Seller_Form: {
-    pathname: "/seller-form",
+    pathname: "seller-form",
     key: "5",
   },
   Payout_Form: {
-    pathname: "/payout-form",
+    pathname: "payout-form",
     key: "6",
   },
   New_Seller_Request: {
@@ -44,11 +46,11 @@ export const SCREEN_PATH = {
     key: "11",
   },
   order: {
-    pathname: "/order",
+    pathname: "order",
     key: "12",
   },
   revenue: {
-    pathname: "/revenue",
+    pathname: "revenue",
     key: "13",
   },
   top_ranking: {

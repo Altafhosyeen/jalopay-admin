@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import { Layout, Menu, Button, theme } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
-import { ADMIN_ROUTES } from "../route";
+import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import { ADMIN_ROUTES } from "../route";
 
 const { Header, Sider, Content } = Layout;
-type Props = {
-  children: React.ReactNode;
-};
 
-const BaseLayout: React.FC<Props> = ({ children }: Props) => {
+const BaseLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   const {
@@ -23,7 +20,6 @@ const BaseLayout: React.FC<Props> = ({ children }: Props) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
           items={ADMIN_ROUTES.map((route) => ({
             ...route,
             onClick: () => navigate(route.pathname),
@@ -36,11 +32,7 @@ const BaseLayout: React.FC<Props> = ({ children }: Props) => {
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
-            }}
+            style={{ fontSize: "16px", width: 64, height: 64 }}
           />
         </Header>
         <Content
@@ -52,8 +44,7 @@ const BaseLayout: React.FC<Props> = ({ children }: Props) => {
             borderRadius: borderRadiusLG,
           }}
         >
-          {children}
-          <Outlet/>
+          <Outlet />
         </Content>
       </Layout>
     </Layout>

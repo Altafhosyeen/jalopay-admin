@@ -13,7 +13,8 @@ const data = Array.from({ length: 13 }).map((_, index) => ({
   NoofProduct: "17",
   Order: "965",
   Rating: "4.8/5",
-  Status: index % 3 === 0 ? "Active" : index % 3 === 1 ? "InActive" : "En-Route",
+  Status:
+    index % 3 === 0 ? "Active" : index % 3 === 1 ? "InActive" : "En-Route",
   Action: "",
 }));
 
@@ -78,12 +79,31 @@ export default function SellerManagment() {
       title: "Status",
       dataIndex: "Status",
       key: "Status",
-      render: (Status) => <Tag color={Status === "Pending" ? "blue" : Status === "Pending" ? "purple" : "orange"}>{Status}</Tag>,
+      render: (Status) => (
+        <Tag
+          color={
+            Status === "Pending"
+              ? "blue"
+              : Status === "Pending"
+              ? "purple"
+              : "orange"
+          }
+        >
+          {Status}
+        </Tag>
+      ),
     },
     {
       title: "Action",
       key: "Action",
-      render: () => <Button type="link" icon={<EyeOutlined />} className="text-purple-600 hover:text-purple-800" onClick={showModal} />,
+      render: () => (
+        <Button
+          type="link"
+          icon={<EyeOutlined />}
+          className="text-purple-600 hover:text-purple-800"
+          onClick={showModal}
+        />
+      ),
     },
   ];
 
@@ -99,21 +119,41 @@ export default function SellerManagment() {
         </div>
         <div className="ms-auto">
           <div className="d-flex gap-3 flex-lg-nowrap flex-wrap">
-            <input type="text" className="form-control shadow-none bg-light border-0" placeholder="search" />
-            <Button icon={<FilterOutlined />} className="bg-light border-0 px-2" style={{ color: "#A25dEF" }} />
-            <select className="rounded bg-light px-2 py-1 text-sm border-0" style={{ color: "#A25dEF" }}>
+            <input
+              type="text"
+              className="form-control shadow-none bg-light border-0"
+              placeholder="search"
+            />
+            <Button
+              icon={<FilterOutlined />}
+              className="bg-light border-0 px-2"
+              style={{ color: "#A25dEF" }}
+            />
+            <select
+              className="rounded bg-light px-2 py-1 text-sm border-0"
+              style={{ color: "#A25dEF" }}
+            >
               <option>0 Jun - 21 Feb</option>
               <option>This Week</option>
             </select>
-            <select className="border-0 bg-light rounded px-2 py-1 text-sm" style={{ color: "#A25dEF" }}>
+            <select
+              className="border-0 bg-light rounded px-2 py-1 text-sm"
+              style={{ color: "#A25dEF" }}
+            >
               <option>Restaurant</option>
               <option>Driver</option>
             </select>
-            <select className="border-0 bg-light rounded px-2 py-1 text-sm" style={{ color: "#A25dEF" }}>
+            <select
+              className="border-0 bg-light rounded px-2 py-1 text-sm"
+              style={{ color: "#A25dEF" }}
+            >
               <option>Revenue</option>
               <option>shipping</option>
             </select>
-            <select className="border-0 bg-light rounded px-1 py-1 text-sm" style={{ color: "#A25dEF" }}>
+            <select
+              className="border-0 bg-light rounded px-1 py-1 text-sm"
+              style={{ color: "#A25dEF" }}
+            >
               <option>All</option>
               <option>Driver</option>
             </select>
@@ -126,8 +166,10 @@ export default function SellerManagment() {
         <div className="row gy-3 justify-content-center mt-4">
           {/* Total Order */}
           <div className="col-lg-3 col-md-3 col-sm-6 col-6">
-           <Link to={`${SCREEN_PATH.Seller_Management.pathname}/total-seller`} className="text-decoration-none">
-
+            <Link
+              to="/seller-management/total-seller"
+              className="text-decoration-none"
+            >
               <div
                 className="text-center px-2 py-2 rounded-4"
                 style={{
@@ -175,7 +217,8 @@ export default function SellerManagment() {
                 }}
               >
                 <div className="font-semibold">
-                  <i className="fa fa-solid fa-clock-rotate-left"></i> Pending Approve
+                  <i className="fa fa-solid fa-clock-rotate-left"></i> Pending
+                  Approve
                 </div>
                 <div className="text-xl font-bold">160</div>
               </div>
@@ -208,7 +251,12 @@ export default function SellerManagment() {
         <div className="d-flex px-3 mb-2">
           <div></div>
           <div className="ms-auto">
-            <select name="" id="" className="rounded-2 form-select shadow-none" style={{ color: "#A25dEF", border: "1px solid #A25def" }}>
+            <select
+              name=""
+              id=""
+              className="rounded-2 form-select shadow-none"
+              style={{ color: "#A25dEF", border: "1px solid #A25def" }}
+            >
               <option value="">Action</option>
               <option value="">Active</option>
               <option value="">InActive</option>
@@ -228,37 +276,77 @@ export default function SellerManagment() {
         />
 
         {/* Modal */}
-        <Modal title="All Seller List" open={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Submit">
+        <Modal
+          title="All Seller List"
+          open={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          okText="Submit"
+        >
           <Form form={form} layout="vertical">
-            <Form.Item name="ID" label="ID" rules={[{ required: true, message: "Please enter ID" }]}>
+            <Form.Item
+              name="ID"
+              label="ID"
+              rules={[{ required: true, message: "Please enter ID" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Name" label="Name" rules={[{ required: true, message: "Please enter Name" }]}>
+            <Form.Item
+              name="Name"
+              label="Name"
+              rules={[{ required: true, message: "Please enter Name" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Category" label="Category" rules={[{ required: true, message: "Please enter Category" }]}>
+            <Form.Item
+              name="Category"
+              label="Category"
+              rules={[{ required: true, message: "Please enter Category" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Revenue" label="Revenue" rules={[{ required: true, message: "Please enter Revenue" }]}>
+            <Form.Item
+              name="Revenue"
+              label="Revenue"
+              rules={[{ required: true, message: "Please enter Revenue" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="NoofProduct" label="No. of Products" rules={[{ required: true, message: "Please enter No. of Products" }]}>
+            <Form.Item
+              name="NoofProduct"
+              label="No. of Products"
+              rules={[
+                { required: true, message: "Please enter No. of Products" },
+              ]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Order" label="Order" rules={[{ required: true, message: "Please enter Order" }]}>
+            <Form.Item
+              name="Order"
+              label="Order"
+              rules={[{ required: true, message: "Please enter Order" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Rating" label="Rating" rules={[{ required: true, message: "Please enter Rating" }]}>
+            <Form.Item
+              name="Rating"
+              label="Rating"
+              rules={[{ required: true, message: "Please enter Rating" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Status" label="Status" rules={[{ required: true, message: "Please enter Status" }]}>
+            <Form.Item
+              name="Status"
+              label="Status"
+              rules={[{ required: true, message: "Please enter Status" }]}
+            >
               <Input />
             </Form.Item>
           </Form>

@@ -1,28 +1,20 @@
-import { Route, Routes } from "react-router-dom";
-import { SCREEN_PATH } from "./constants";
+import { Routes, Route } from "react-router-dom";
+import BaseLayout from "./layout/BaseLayout";
 import SellerManagment from "./pages/SellerManagment";
 import TotalSeller from "./pages/TotalSellet";
 
 const App = () => {
   return (
-    <div className="min-h-[calc(100dvh-143px)] overflow-hidden">
-      <Routes>
+    <Routes>
+      <Route path="/" element={<BaseLayout />}>
+        <Route path="dashboard" element={<div>Dashboard</div>} />
+        <Route path="seller-management" element={<SellerManagment />} />
         <Route
-          path={SCREEN_PATH.Dashboard.pathname}
-          element={<div className="h-screen text-green-700">Dashboard</div>}
+          path="seller-management/total-seller"
+          element={<TotalSeller />}
         />
-        <Route
-          path={SCREEN_PATH.Seller_Management.pathname}
-          element={<SellerManagment />}
-        > 
-          {/* ✅ Make this a relative path */}
-          <Route
-            path="total-seller"
-            element={<TotalSeller />}
-          />
-        </Route>
-      </Routes>
-    </div>
+      </Route>
+    </Routes>
   );
 };
 

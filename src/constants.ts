@@ -1,5 +1,3 @@
-import type Order from "./pages/Order";
-
 export const SCREEN_PATH = {
   Dashboard: {
     pathname: "/dashboard",
@@ -10,24 +8,32 @@ export const SCREEN_PATH = {
     key: "2",
   },
   Ride_Partner: {
-    pathname: "ride-partner",
+    pathname: "/seller-management/ride-partner",
     key: "3",
   },
   Category: {
-    pathname: "category",
+    pathname: "/seller-management/category",
     key: "4",
   },
   Seller_Form: {
-    pathname: "seller-form",
+    pathname: "/seller-management/seller-form",
     key: "5",
   },
   Payout_Form: {
-    pathname: "payout-form",
+    pathname: "/seller-management/payout-form",
     key: "6",
   },
   New_Seller_Request: {
     pathname: "/new-seller-request",
     key: "7",
+  },
+  order: {
+    pathname: "/new-seller-request/order",
+    key: "12",
+  },
+  revenue: {
+    pathname: "/new-seller-request/revenue",
+    key: "13",
   },
   product_service_request: {
     pathname: "/product-service-request",
@@ -44,14 +50,6 @@ export const SCREEN_PATH = {
   profile_update_request: {
     pathname: "/profile-update-request",
     key: "11",
-  },
-  order: {
-    pathname: "order",
-    key: "12",
-  },
-  revenue: {
-    pathname: "revenue",
-    key: "13",
   },
   top_ranking: {
     pathname: "/top-ranking",
@@ -78,10 +76,6 @@ export const SCREEN_PATH = {
     key: "19",
   },
   contact_support: {
-    pathname: "/contact-support",
-    key: "20",
-  },
-  contact_supportxx: {
     pathname: "/contact-support",
     key: "20",
   },

@@ -21,9 +21,25 @@ const BaseLayout = () => {
           theme="dark"
           mode="inline"
           items={ADMIN_ROUTES.map((route) => ({
-            ...route,
-            onClick: () => navigate(route.pathname),
+            key: route.key,
+            icon: route.icon,
+            label: route.label,
+            children: route.children?.map((child) => ({
+              key: child.key,
+              icon: child.icon,
+              label: child.label,
+            })),
           }))}
+          onClick={({ key }) => {
+            // 🔍 Find clicked route from both top-level and children
+            const flatRoutes = ADMIN_ROUTES.flatMap((r) =>
+              r.children ? [r, ...r.children] : [r]
+            );
+            const matched = flatRoutes.find((r) => r.key === key);
+            if (matched) {
+              navigate(matched.pathname);
+            }
+          }}
         />
       </Sider>
       <Layout>

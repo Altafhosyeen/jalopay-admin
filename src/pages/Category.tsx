@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Table, Button , Modal, Form, Input } from "antd";
-import { FilterOutlined, ArrowLeftOutlined, EyeOutlined } from "@ant-design/icons";
-;
-
+import { Table, Button, Modal, Form, Input } from "antd";
+import {
+  FilterOutlined,
+  ArrowLeftOutlined,
+  EyeOutlined,
+} from "@ant-design/icons";
 const data = Array.from({ length: 13 }).map((_, index) => ({
   key: index,
   Name: "Talha Ashraf",
@@ -71,7 +73,14 @@ export default function Category() {
     {
       title: "Action",
       key: "Action",
-      render: () => <Button type="link" icon={<EyeOutlined />} className="text-purple-600 hover:text-purple-800" onClick={showModal} />,
+      render: () => (
+        <Button
+          type="link"
+          icon={<EyeOutlined />}
+          className="text-purple-600 hover:text-purple-800"
+          onClick={showModal}
+        />
+      ),
     },
   ];
 
@@ -81,19 +90,36 @@ export default function Category() {
       <div className="d-flex mb-4 px-3 flex flex-col sm:flex-row flex-wrap">
         <div className="d-flex items-center gap-2">
           <ArrowLeftOutlined style={{ color: "#A25dEF" }} />
-          <h5 className="text-lg font-semibold mt-1" style={{ color: "#A25dEF" }}>
+          <h5
+            className="text-lg font-semibold mt-1"
+            style={{ color: "#A25dEF" }}
+          >
             All Categories
           </h5>
         </div>
         <div className="ms-auto">
           <div className="d-flex gap-3 flex-lg-nowrap flex-wrap">
-            <input type="text" className="form-control shadow-none bg-light border-0" placeholder="search" />
-            <Button icon={<FilterOutlined />} className="bg-light border-0 px-2" style={{ color: "#A25dEF" }} />
-            <select className="rounded bg-light px-2 py-1 text-sm border-0" style={{ color: "#A25dEF" }}>
+            <input
+              type="text"
+              className="form-control shadow-none bg-light border-0"
+              placeholder="search"
+            />
+            <Button
+              icon={<FilterOutlined />}
+              className="bg-light border-0 px-2"
+              style={{ color: "#A25dEF" }}
+            />
+            <select
+              className="rounded bg-light px-2 py-1 text-sm border-0"
+              style={{ color: "#A25dEF" }}
+            >
               <option>0 Jun - 21 Feb</option>
               <option>This Week</option>
             </select>
-            <select className="border-0 bg-light rounded px-2 py-1 text-sm" style={{ color: "#A25dEF" }}>
+            <select
+              className="border-0 bg-light rounded px-2 py-1 text-sm"
+              style={{ color: "#A25dEF" }}
+            >
               <option>Revenue</option>
               <option>Driver</option>
             </select>
@@ -116,7 +142,8 @@ export default function Category() {
                 }}
               >
                 <div className="font-semibold">
-                  <i className="fa fa-solid fa-envelope"></i> Total Revenue of All Categories
+                  <i className="fa fa-solid fa-envelope"></i> Total Revenue of
+                  All Categories
                 </div>
                 <div className="text-xl font-bold">$330, 422</div>
               </div>
@@ -135,7 +162,8 @@ export default function Category() {
                 }}
               >
                 <div className="font-semibold">
-                  <i className="fa fa-solid fa-database"></i> Highest Earning Category
+                  <i className="fa fa-solid fa-database"></i> Highest Earning
+                  Category
                 </div>
                 <div className="text-xl font-bold">%876, 433</div>
               </div>
@@ -159,29 +187,61 @@ export default function Category() {
         />
 
         {/* Modal */}
-        <Modal title="Category Overview" open={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Submit">
+        <Modal
+          title="Category Overview"
+          open={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          okText="Submit"
+        >
           <Form form={form} layout="vertical">
-            <Form.Item name="Name" label="Name" rules={[{ required: true, message: "Please enter Name" }]}>
+            <Form.Item
+              name="Name"
+              label="Name"
+              rules={[{ required: true, message: "Please enter Name" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Revenue" label="Revenue" rules={[{ required: true, message: "Please enter Revenue" }]}>
+            <Form.Item
+              name="Revenue"
+              label="Revenue"
+              rules={[{ required: true, message: "Please enter Revenue" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Orders" label="Orders" rules={[{ required: true, message: "Please enter Orders" }]}>
+            <Form.Item
+              name="Orders"
+              label="Orders"
+              rules={[{ required: true, message: "Please enter Orders" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="AvgRating" label="Avg. Rating" rules={[{ required: true, message: "Please enter Avg. Rating" }]}>
+            <Form.Item
+              name="AvgRating"
+              label="Avg. Rating"
+              rules={[{ required: true, message: "Please enter Avg. Rating" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="TotalRevinue" label="Total Revenue" rules={[{ required: true, message: "Please enter Total Revenue" }]}>
+            <Form.Item
+              name="TotalRevinue"
+              label="Total Revenue"
+              rules={[
+                { required: true, message: "Please enter Total Revenue" },
+              ]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item name="Status" label="Status" rules={[{ required: true, message: "Please enter Status" }]}>
+            <Form.Item
+              name="Status"
+              label="Status"
+              rules={[{ required: true, message: "Please enter Status" }]}
+            >
               <Input />
             </Form.Item>
           </Form>

@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { SCREEN_PATH } from "./constants";
+import SellerManagment from "./pages/SellerManagment";
 
 const App = () => {
   return (
@@ -10,8 +11,11 @@ const App = () => {
           path={SCREEN_PATH.Dashboard.pathname}
           element={<div>Dashboard</div>}
         />
-        <Route path="/about" element={<div>About Page</div>} />
-        <Route path="/contact" element={<div>Contact Page</div>} />
+        <Route
+          path={SCREEN_PATH.Seller_Management.pathname}
+          element={<SellerManagment />}
+        />
+        
         {/* Add more routes as needed */}
       </Routes>
     </div>
